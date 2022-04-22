@@ -6,3 +6,4 @@
 3. Signup  project for a friend
 4. Notepad project
 5. Hex color picker
+6. Time & Date
