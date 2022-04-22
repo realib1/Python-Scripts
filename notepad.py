@@ -1,8 +1,9 @@
-#iports the neccesary libraries to help with the project
+# imports the necessary libraries to help with the project
 from tkinter import *
 # import win32api
 from tkinter import filedialog
 from tkinter.messagebox import askyesno, INFO, askyesnocancel
+
 
 # Save button triggers for to save your notes.
 def save():
@@ -19,6 +20,7 @@ def save():
     file.write(savetext)
     file.close()
 
+
 # Print Button to print your notes
 def file_print():
     print_file = filedialog.askopenfile(
@@ -32,6 +34,7 @@ def file_print():
     # if print_file:
     #     win32api.ShellExecute(0, "print", print_file, None, ".", 0)
 
+
 # Discard button to dicard or cancle note in progress
 def discard():
     answer = askyesno(
@@ -41,6 +44,7 @@ def discard():
 
     if answer:
         window.destroy()
+
 
 # Open nots button to open an existing note
 def open_note():
@@ -57,6 +61,7 @@ def open_note():
     except:
         return
 
+
 # Exit notepad from the file menu
 
 # def file_exit():
@@ -65,7 +70,7 @@ def open_note():
 #     if confirm:
 #         exit()
 
-    
+
 # window setup
 
 window = Tk()
@@ -78,8 +83,7 @@ window.iconphoto(False, iconphoto)
 
 # Making frame for the project
 frame = Frame(window, bg="skyblue")
-frame.pack(pady=10, ipadx=10, ipady=10,padx= 10, expand=True, fill=BOTH)
-
+frame.pack(pady=10, ipadx=10, ipady=10, padx=10, expand=True, fill=BOTH)
 
 # Menu bar
 
@@ -93,7 +97,7 @@ frame.pack(pady=10, ipadx=10, ipady=10,padx= 10, expand=True, fill=BOTH)
 #     top.config(bg="skyblue")
 #     frame = Frame(top, bg="skyblue")
 #     frame.pack(pady=5, ipadx=10, ipady=5, expand=True, fill=BOTH)
-    
+
 #     lbl = Label(frame,
 #             text="Notepad",
 #             bg="skyblue",
@@ -141,8 +145,7 @@ frame.pack(pady=10, ipadx=10, ipady=10,padx= 10, expand=True, fill=BOTH)
 #                         command=discard)
 #     btn_discard.pack(padx=15, ipadx=4, side=LEFT)
 
-    
-    
+
 #     top.mainloop()
 
 # Menu bar build
@@ -163,7 +166,7 @@ lbl = Label(frame,
             font=("Verdana", 30))
 lbl.pack()
 
-#Project text area/ Notepad
+# Project text area/ Notepad
 
 text = Text(frame,
             fg="#00274f",
@@ -188,7 +191,7 @@ btn_print = Button(frame,
                    command=file_print)
 btn_print.pack(padx=15, ipadx=15, side=LEFT)
 
-#Save button to save new notes
+# Save button to save new notes
 
 btn_save = Button(frame,
                   text="Save",
@@ -200,7 +203,7 @@ btn_save = Button(frame,
                   command=save)
 btn_save.pack(padx=5, pady=5, ipadx=15, side=LEFT)
 
-#Discard button to exit note
+# Discard button to exit note
 
 btn_discard = Button(frame,
                      text="Discard",
@@ -214,5 +217,5 @@ btn_discard.pack(padx=15, ipadx=4, side=LEFT)
 
 # lbl = Label(text="Make a new note").pack()
 
-#Closing wondow
+# Closing wondow
 window.mainloop()
