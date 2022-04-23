@@ -32,7 +32,7 @@ def file_print():
                                             ('PDF', '.pdf'),
                                             ('All files', '.*')])
     # if print_file:
-    #     win32api.ShellExecute(0, "print", print_file, None, ".", 0)
+        # win32api.ShellExecute(0, "print", print_file, None, ".", 0)
 
 
 # Discard button to dicard or cancle note in progress

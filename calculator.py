@@ -32,13 +32,16 @@ def clear_btn():
 window = Tk()
 window.title('Calculator')
 window.geometry("500x500")
+frame = Frame(window)
+frame.config(bg="green")
+frame.pack(expand=True, fill=BOTH)
 # window.config(bg="blue")
 # frame = Frame(window)
 # frame.place(x=100, y=0, width=600, height=600)
 
 equation = StringVar()
 
-display_ent = Entry(window, width=15,
+display_ent = Entry(frame, width=15,
                     font=("Verdana", 20), bd=0,
                     textvariable=equation,
                     justify="right",
@@ -49,7 +52,7 @@ display_ent = Entry(window, width=15,
 display_ent.insert(END, "0")
 display_ent.place(x=50, y=10)
 
-btn_ac = Button(window,
+btn_ac = Button(frame,
                 text="AC",
                 width=5, font=("Helvetica", 15),
                 fg="white",
@@ -59,7 +62,7 @@ btn_ac = Button(window,
                 command=clear_btn)
 btn_ac.place(x=50, y=60)
 
-btn_bracket = Button(window,
+btn_bracket = Button(frame,
                      text="(",
                      width=3, font=("Helvetica", 15),
                      fg="white",
@@ -69,7 +72,7 @@ btn_bracket = Button(window,
                      command=lambda: btn_click("("))
 btn_bracket.place(x=115, y=60)
 
-btn_brackets = Button(window,
+btn_brackets = Button(frame,
                       text=")",
                       width=3, font=("Helvetica", 15),
                       fg="white",
@@ -79,7 +82,7 @@ btn_brackets = Button(window,
                       command=lambda: btn_click(")"))
 btn_brackets.place(x=148, y=60)
 
-btn_modulo = Button(window,
+btn_modulo = Button(frame,
                     text="%",
                     width=5, font=("Helvetica", 15),
                     fg="white",
@@ -89,7 +92,7 @@ btn_modulo = Button(window,
                     command=lambda: btn_click("%"))
 btn_modulo.place(x=180, y=60)
 
-btn_divide = Button(window,
+btn_divide = Button(frame,
                     text="/",
                     width=5, font=("Helvetica", 15),
                     fg="white",
@@ -99,7 +102,7 @@ btn_divide = Button(window,
                     command=lambda: btn_click("/"))
 btn_divide.place(x=245, y=60)
 
-btn_seven = Button(window,
+btn_seven = Button(frame,
                    text="7",
                    width=5,
                    font=("Helvetica", 15),
@@ -110,7 +113,7 @@ btn_seven = Button(window,
                    command=lambda: btn_click("7"))
 btn_seven.place(x=50, y=100)
 
-btn_eight = Button(window,
+btn_eight = Button(frame,
                    text="8",
                    width=5,
                    font=("Helvetica", 15),
@@ -121,7 +124,7 @@ btn_eight = Button(window,
                    command=lambda: btn_click("8"))
 btn_eight.place(x=115, y=100)
 
-btn_nine = Button(window,
+btn_nine = Button(frame,
                   text="9",
                   width=5,
                   font=("Helvetica", 15),
@@ -132,7 +135,7 @@ btn_nine = Button(window,
                   command=lambda: btn_click("9"))
 btn_nine.place(x=180, y=100)
 
-btn_multiplly = Button(window,
+btn_multiplly = Button(frame,
                        text="x",
                        width=5,
                        font=("Helvetica", 15),
@@ -143,7 +146,7 @@ btn_multiplly = Button(window,
                        command=lambda: btn_click("*"))
 btn_multiplly.place(x=245, y=100)
 
-btn_four = Button(window,
+btn_four = Button(frame,
                   text="4",
                   width=5,
                   font=("Helvetica", 15),
@@ -154,7 +157,7 @@ btn_four = Button(window,
                   command=lambda: btn_click("4"))
 btn_four.place(x=50, y=140)
 
-btn_five = Button(window,
+btn_five = Button(frame,
                   text="5",
                   width=5,
                   font=("Helvetica", 15),
@@ -165,7 +168,7 @@ btn_five = Button(window,
                   command=lambda: btn_click("5"))
 btn_five.place(x=115, y=140)
 
-btn_six = Button(window,
+btn_six = Button(frame,
                  text="6",
                  width=5,
                  font=("Helvetica", 15),
@@ -176,7 +179,7 @@ btn_six = Button(window,
                  command=lambda: btn_click("6"))
 btn_six.place(x=180, y=140)
 
-btn_minus = Button(window,
+btn_minus = Button(frame,
                    text="-",
                    width=5,
                    font=("Helvetica", 15),
@@ -187,7 +190,7 @@ btn_minus = Button(window,
                    command=lambda: btn_click("-"))
 btn_minus.place(x=245, y=140)
 
-btn_one = Button(window,
+btn_one = Button(frame,
                  text="1",
                  width=5,
                  font=("Helvetica", 15),
@@ -198,7 +201,7 @@ btn_one = Button(window,
                  command=lambda: btn_click("1"))
 btn_one.place(x=50, y=180)
 
-btn_two = Button(window,
+btn_two = Button(frame,
                  text="2",
                  width=5,
                  font=("Helvetica", 15),
@@ -209,7 +212,7 @@ btn_two = Button(window,
                  command=lambda: btn_click("2"))
 btn_two.place(x=115, y=180)
 
-btn_three = Button(window,
+btn_three = Button(frame,
                    text="3",
                    width=5,
                    font=("Helvetica", 15),
@@ -220,7 +223,7 @@ btn_three = Button(window,
                    command=lambda: btn_click("3"))
 btn_three.place(x=180, y=180)
 
-btn_plus = Button(window,
+btn_plus = Button(frame,
                   text="+",
                   width=5,
                   font=("Helvetica", 15),
@@ -231,7 +234,7 @@ btn_plus = Button(window,
                   command=lambda: btn_click("+"))
 btn_plus.place(x=245, y=180)
 
-btn_zero = Button(window,
+btn_zero = Button(frame,
                   text="0",
                   width=11,
                   font=("Helvetica", 15),
@@ -242,7 +245,7 @@ btn_zero = Button(window,
                   command=lambda: btn_click("0"))
 btn_zero.place(x=50, y=220)
 
-btn_float = Button(window,
+btn_float = Button(frame,
                    text=".",
                    width=5,
                    font=("Helvetica", 15),
@@ -253,7 +256,7 @@ btn_float = Button(window,
                    command=lambda: btn_click("."))
 btn_float.place(x=180, y=220)
 
-btn_equal = Button(window,
+btn_equal = Button(frame,
                    text="=",
                    width=5,
                    font=("Helvetica", 15),
