@@ -56,10 +56,10 @@ def update():
  
  
 def lap():
-    print(watch_lbl)
-    # lap_str = watch_lbl.get()
-    # lbl_lap = Label(frame, text=lap_str, font=("Verdana", 15))
-    # lbl_lap.pack(side="bottom")
+    print(watch_lbl.cget('text'))
+    lap_str = watch_lbl.cget('text')
+    lbl_lap = Label(frame, text=lap_str, font=("Verdana", 15))
+    lbl_lap.pack(side="bottom")
    
 window = Tk()
 window.title("Stop Clock")
