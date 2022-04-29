@@ -1,4 +1,5 @@
 from tkinter import *
+from turtle import width
 
 expression = ""
 
@@ -27,14 +28,14 @@ def clear_btn():
     global expression
     expression = ""
     equation.set("")
-
+WIDTH=380
+HEIGHT = 300
 
 window = Tk()
 window.title('Calculator')
-window.geometry("500x500")
 frame = Frame(window)
-frame.config(bg="green")
-frame.pack(expand=True, fill=BOTH)
+frame.config(bg="green", bd=3, highlightthickness=5, highlightbackground="black", highlightcolor='black', width=WIDTH, height=HEIGHT)
+frame.pack(expand=True, fill=BOTH, padx=10, pady=10)
 # window.config(bg="blue")
 # frame = Frame(window)
 # frame.place(x=100, y=0, width=600, height=600)
