@@ -10,14 +10,13 @@ window.title("Sign Up Form")
 window.geometry("600x600")
 window.configure(bg="#008080")
 
-# verify_acc = StringVar()
-
+# verify_acc = ''
+# global verify_acc
+#     verify_acc = 
 def verify():
-    lbl_v = Label(frame, text="Verify your account from your email account.", 
-                  bg="#6ccdd5",
-                  font=("Verdana", 15))
-    lbl_v.pack(side=BOTTOM)
-    return lbl_v
+    print("Verify Your account from the mail sent to your email address.")
+    acc_ent.config(text="Verify Your account from your email address.")
+    
         
     
     
@@ -57,6 +56,7 @@ signup_btn = Button(frame, text="Signup",
                     font=("Verdana", 15),
                     bg="#008080", activebackground="#008080", command=verify).place(x=250, y= 300)
 
-# acc_ent = Entry(frame, text=verify_acc, font=("Verdana", 15), width=35, bg="#6ccdd5", bd=0).pack(side=BOTTOM, ipadx=20)
+acc_ent = Label(frame, cursor="xterm", font=("Verdana", 15), width=35, bg="#6ccdd5", bd=0)
+acc_ent.pack(side=BOTTOM, ipadx=20)
 
 window.mainloop()

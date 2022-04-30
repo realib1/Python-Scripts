@@ -1,7 +1,5 @@
-from time import  *
+from time import *
 from tkinter import *
-
-
 
 thiking = False
 
@@ -21,7 +19,6 @@ def stop():
         thiking =  False
         
         
- 
 def reset():
     global thiking
     if thiking:
@@ -30,6 +27,7 @@ def reset():
     global hour, minute, second, millisecond
     hour, minute, second, millisecond = 0, 0, 0, 0
     watch_lbl.config(text="00:00:00:00")
+    lbl_lap.config(text='')
   
 def update():
     global hour, minute, second, millisecond   
@@ -54,16 +52,17 @@ def update():
     
     update_time = watch_lbl.after(10, update)
  
- 
+lap_str = ''
 def lap():
+    global lap_str
     print(watch_lbl.cget('text'))
     lap_str = watch_lbl.cget('text')
-    lbl_lap = Label(frame, text=lap_str, font=("Verdana", 15))
-    lbl_lap.pack(side="bottom")
-   
+    lbl_lap.config(text=lap_str)
+    
+    
 window = Tk()
 window.title("Stop Clock")
-window.geometry("500x300")
+window.geometry("700x500")
 window.config(bg="#004080")
 
 frame = Frame(window, bd=5, 
@@ -71,26 +70,29 @@ frame = Frame(window, bd=5,
               highlightbackground="black", 
               highlightcolor="black")
 frame.config(bg="#004080")
-frame.pack(ipadx=20, ipady=10, padx=10, pady=10)
+frame.pack(ipadx=20, ipady=40, padx=10, pady=10)
 
 
-lbl = Label(frame, text="Stop Watch", bg="#004080", font=("Verdana", 35, "bold"))
+lbl = Label(frame, cursor="xterm", text="Stop Watch", bg="#004080", font=("Verdana", 35, "bold"))
 lbl.pack(ipadx=5)
 
-watch_lbl = Label(frame, text="00:00:00:00", bg="#004080", font=("Fira Code", 50, "bold"))
+watch_lbl = Label(frame, cursor="xterm", text="00:00:00:00", bg="#004080", font=("Fira Code", 50, "bold"))
 watch_lbl.pack(ipadx=30, ipady= 10)
 
-btn_start = Button(frame, text="Start", font=("Verdana", 15), command=start)
-btn_start.pack(side="left", ipadx=5, padx=20)
+btn_start = Button(frame, cursor="hand2", bg="#00ff40", activebackground="#008000", text="Start", font=("Verdana", 15), command=start)
+btn_start.pack(side="left", ipadx=5, padx=30)
 
 
-btn_lap = Button(frame, text="Lap", font=("Verdana", 15), command=lap)
-btn_lap.pack(side="left", ipadx=5, padx=20)
+btn_lap = Button(frame, cursor="hand2",bg="#80ff80", activebackground="#80ff80", text="Lap", font=("Verdana", 15), command=lap)
+btn_lap.pack(side="left", ipadx=5, padx=40)
 
-btn_stop = Button(frame, text="Stop", font=("Verdana", 15), command=stop)
-btn_stop.pack(side="left", ipadx=5, padx=20)
+btn_stop = Button(frame, cursor="hand2", bg="#c3063c", activebackground="#c3063c", text="Stop", font=("Verdana", 15), command=stop)
+btn_stop.pack(side="left", ipadx=5, padx=30)
 
-btn_reset = Button(frame, text="Reset", font=("Verdana", 15), command=reset)
+btn_reset = Button(frame, cursor="hand2", bg="#eb0214", activebackground="#eb0214", text="Reset", font=("Verdana", 15), command=reset)
 btn_reset.pack(side="left", ipadx=5, padx=20)
+
+lbl_lap = Label(window, cursor="xterm", font=("Fira Code", 40), bg="#004080")
+lbl_lap.pack(side="top", anchor=CENTER, ipadx=5, ipady=10, padx=20)
 
 window.mainloop()
