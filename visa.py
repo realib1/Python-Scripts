@@ -8,15 +8,15 @@ while chances < 5:
         print("Login Successfully")
         purchase = int(input("Please enter amount to pay: "))
         if purchase > balance:
-            print("Balance too low.")
+            print("Balance is insufficient.")
         else:
             balance = balance - purchase
             print("Item Amount: " + str(purchase))
             print("Purchase Successfully")
             print("Remaining Balnce:" + str(balance))
-    elif pin != pin_input:
+    else:
         print("Wrong Pin, Try again")
         chances += 1
         
-    else:
-        pass
+else:
+    print('Your Card has been blocked Please visit any of our branches or call 100 for customer service.')
