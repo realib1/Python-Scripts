@@ -10,11 +10,7 @@ window.title("Sign Up Form")
 window.geometry("600x600")
 window.configure(bg="#008080")
 
-# verify_acc = ''
-# global verify_acc
-#     verify_acc = 
 def verify():
-    print("Verify Your account from the mail sent to your email address.")
     acc_ent.config(text="Verify Your account from your email address.")
     
         

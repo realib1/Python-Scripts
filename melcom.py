@@ -1,4 +1,6 @@
-from hashlib import new
+#Default username: Any name works
+# Default password: Melcom
+
 import time # import time t use at the visiting side so as to record the time a user visits.
 import random # uses this random number generator to generate random numbers for order numbers.
 
@@ -88,6 +90,7 @@ def userChoiceSelect():
     else:
         print("Invalid Choice. Please enter valid choice")
 
+# Displays the products in the store
 def displayProducts():
     print("ID \tProduct       \tType             \tPrice     \tQuantity")
     print("-" * 75)
@@ -126,8 +129,11 @@ def displayProducts():
     #         print(f"Total: GHS{total:.2f}")
     #     else:
     #             print("-" * 15)
-    #             print(f"Total: GHS{new_price:.2f}")   
+    #             print(f"Total: GHS{new_price:.2f}")
+    
+       
 # this function gives the user the chance to place an order in the store.
+# Works for the discount and prints the total amount on an other.
 def placeOrder():
     order_number = random.randint(10000000, 1000000000000)
     displayProducts()
@@ -235,7 +241,7 @@ def placeOrder():
     # print("\nAvailable products : \n")
     # displayProducts()
       
-      
+# For aother chance to ener product id
 def user_id():
     displayProducts()
     p_id = int(input("\nEnter the id : "))
@@ -254,7 +260,8 @@ def cancelOrder():
     else:
         print(f'{order_id} is removed from the placed order')
 
-
+# Login function for user to login into account.
+# Default password: Melcom, you can use any username
 def login():
     username = input("Enter Username: ")
     chances = 0
@@ -271,7 +278,7 @@ def login():
             
     print("Sorry, You've enter wrong password three times, please try again in an hour or reset your password.")
 
-
+# Function for try again login
 def tryAgain():
     response = input("Would you like to try logging in again? (Y/N): ")
     response = response.upper()
@@ -287,5 +294,7 @@ def logout():
 
 login()
 
+
+# Login try again
 while tryAgain():
     login()

@@ -10,6 +10,7 @@ window = Tk()
 window.geometry('420x420')
 
 
+
 def color():
     colors = colorchooser.askcolor()
     colorHex = colors[1]
@@ -33,11 +34,12 @@ ent.pack(ipadx=10, padx=10)
 
 lbl1 = Label(window, text="Hint: Click on the entry to copy.", font=("Verdana",10))
 lbl1.pack(pady=10)
-# copy_btn = Button(window, 
-#              text=' Copy hexColor', 
-#              font=(15), 
-#              command=copy)
-# copy_btn.pack(pady=20, ipady=5)
+
+copy_btn = Button(window, 
+             text=' Copy hexColor', 
+             font=(15), 
+             command=copy)
+copy_btn.pack(pady=20, ipady=5)
 
 ent.bind("<Button-1>", copy)  
 

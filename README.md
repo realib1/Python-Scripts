@@ -7,3 +7,5 @@
 4. Notepad project
 5. Hex color picker
 6. Time & Date
+7. Stopwatch
+8. Password Generator
