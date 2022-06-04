@@ -17,6 +17,6 @@ while chances < 5:
     else:
         print("Wrong Pin, Try again")
         chances += 1
-        
-else:
-    print('Your Card has been blocked Please visit any of our branches or call 100 for customer service.')
+
+print('Your Card has been blocked Please visit any of our branches or call 100 for customer service.')
+

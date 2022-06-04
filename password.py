@@ -2,8 +2,10 @@ from tkinter import *
 import random
    
 def copy():
+    # lbl_screen.event_generate("<<Copy>>")
+    copys = lbl_screen.event_generate("<<Copy>>")
     window.clipboard_clear()
-    window.clipboard_append(lbl_screen)
+    window.clipboard_append(copys)
     window.update()
     
 
@@ -28,7 +30,7 @@ def passwordgen():
     lbl_screen.config(text=password)
     # print(password)
     
-passwrd = ''
+ent = Entry(frame).pack()
     
 lbl = Label(frame, text="Password Generator",  font=("Verdana", 25), bg="#804040", fg="white")
 lbl.pack(padx=10, pady=20, ipadx=10)
