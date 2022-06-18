@@ -1,0 +1,12 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'style.css' %}">
+
+<body>
+    <h1 class="page-header">Word Counter</h1> <br>
+
+<form method="POST" action="counter"> 
+     {% csrf_token %}
+    <textarea name="text" rows="10" cols="80" placeholder="Enter your text here..."></textarea>
+    <input type="Submit" value="Submit" class="btn">
+</form>
+</body>
