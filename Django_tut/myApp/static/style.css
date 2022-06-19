@@ -1,59 +1,73 @@
-    * {
-        margin: 0;
-        padding: 0;
-    }
-    
-    .page-header {
-        margin: 0 auto;
-    }
-    
-    h1 {
-        font-family: "Fira Code", "Courier New", Courier, monospace;
-        color: #04a85c;
-        background-color: rgb(15, 14, 14);
-        text-align: center;
-        margin: 2rem auto;
-        padding: 0.5em 0.5em 0.5em 0.5em;
-    }
-    
-    .title {
-        max-width: 700px;
-    }
-    
-    body {
-        background-color: aquamarine;
-        width: 100vw;
-        height: 100vh;
-    }
-    
-    textarea {
-        margin: 0 1rem;
-        padding: 0.5rem;
-        line-height: 1.5;
-        border: 2px solid grey;
-        border-radius: 5px;
-        outline: none;
-        font-family: Verdana, 'Segoe UI', Tahoma, Geneva, sans-serif;
-    }
-    
-    textarea:focus {
-        border: 2px solid #04a85c;
-        ;
-    }
-    
-    .btn {
-        margin: 1rem;
-        padding: 1rem;
-        font-size: 1rem;
-        color: #04a85c;
-        background-color: rgb(5, 1, 5);
-        border: none;
-        border-radius: 5px;
-        font-family: 'Fira Code', sans-serif;
-        font-weight: bolder;
-    }
-    
-    .btn:hover {
-        color: #f1f1f1;
-        background-color: #04a85c;
-    }
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.page-header {
+  margin: 0 auto;
+}
+
+h1 {
+  font-family: "Fira Code", "Courier New", Courier, monospace;
+  color: #04a85c;
+  background-color: rgb(15, 14, 14);
+  text-align: center;
+  margin: 2rem auto;
+  padding: 0.5em 0.5em 0.5em 0.5em;
+}
+
+.title {
+  max-width: 700px;
+}
+
+body {
+  background-color: aquamarine;
+  width: 100vw;
+  height: 100vh;
+  font-family: monospace;
+}
+
+textarea {
+  margin: 0 1rem;
+  padding: 0.5rem;
+  line-height: 1.5;
+  border: 2px solid grey;
+  border-radius: 5px;
+  outline: none;
+  font-family: Verdana, "Segoe UI", Tahoma, Geneva, sans-serif;
+}
+
+textarea:focus {
+  border: 2px solid #04a85c;
+}
+
+.btn {
+  margin: 1rem;
+  padding: 1rem;
+  font-size: 1rem;
+  color: #04a85c;
+  background-color: rgb(5, 1, 5);
+  border: none;
+  border-radius: 5px;
+  font-family: "Fira Code", sans-serif;
+  font-weight: bolder;
+}
+
+.btn:hover {
+  color: #f1f1f1;
+  background-color: #04a85c;
+}
+
+.btn-help {
+    border-radius: 50%;
+    padding: 0.5em;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    font-size: 1.5em;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+}
+
+.container {
+  margin: 1rem;
+}

@@ -1,10 +1,16 @@
 import re
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import Feature
 # Create your views here.
 
 def index(request):
-    return render(request, 'index.html')
+    feature = Feature()
+    feature.name = "?"
+    feature.details = "Type in any amount of worlds and submit for a count, it will show you the amount of words right after submission."
+    feature.is_true = False
+    
+    return render(request, 'index.html', {'feature1': feature})
 
 
 def counter(request):
