@@ -1,0 +1,102 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
+    <title>Tech Hashes</title>
+  </head>
+  <body>
+    <section class="container">
+      <h1 class="page-header">Welcome to Tech Hashes!</h1>
+
+      <div class="page-header2" id="signup">
+        <h2>Signup Here</h2>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          {% for message in messages%}
+          <h5>{{message}}</h5>
+          {% endfor %}
+          <form method="POST" action="signup" id="myForm" name="myForm">
+            {% csrf_token %}
+
+            <label for="firstname">First Name</label>
+            <br />
+            <input
+              type="text"
+              name="firstname"
+              placeholder="Enter your First Name"
+              id="firstname"
+            />
+
+            <br />
+            <label for="lastname">Last Name</label> <br />
+            <input
+              type="text"
+              name="lastname"
+              placeholder="Enter your Last Name"
+              id="lastname"
+            />
+
+            <br />
+            <label for="username">Username</label><br />
+            <input
+              type="text"
+              name="username"
+              placeholder="Enter your username"
+              id="username"
+            />
+
+            <br />
+            <label for="email">Email</label><br />
+            <input
+              type="email"
+              name="email"
+              placeholder="Enter your Email"
+              id="email"
+            />
+
+            <br />
+            <label for="password">Password</label><br />
+              <label>
+                  <input
+                    type="password"
+                    name="password"
+                    placeholder="Enter Password"
+                    class="password"
+                  />
+              </label>
+
+              <br />
+            <label for="confirmPassword">Confirm Password</label><br />
+              <label>
+                  <input
+                    type="password"
+                    name="confirmPassword"
+                    placeholder="Repeat Password"
+                    class="password"
+                  />
+              </label>
+              <br />
+            <div class="btn-submit">
+              <input type="submit" name="submit" value="Sign Up" class="btn" />
+            </div>
+            <br />
+            <div class="registerHere">
+              Already have an account yet?<br />
+              <a href="{% url 'index' %}"
+                >
+                Login here!</a
+              >
+            </div>
+          </form>
+        </div>
+        <div class="col-md-3"></div>
+      </div>
+    </section>
+  </body>
+</html>
