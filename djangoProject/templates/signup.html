@@ -11,56 +11,38 @@
   </head>
   <body>
     <section class="container">
-      <h1 class="page-header">Welcome to Tech Hashes!</h1>
+      <h1 class="page-header">Hashed Chats!</h1>
 
       <div class="page-header2" id="signup">
         <h2>Signup Here</h2>
       </div>
       <div class="row">
         <div class="col-md-6">
-          {% for message in messages%}
-          <h5>{{message}}</h5>
-          {% endfor %}
+{#          {% for message in messages%}#}
+{#          <h5>{{message}}</h5>#}
+{#          {% endfor %}#}
           <form method="POST" action="signup" id="myForm" name="myForm">
             {% csrf_token %}
 
-            <label for="firstname">First Name</label>
+            <label for="name">Room Name</label>
             <br />
-            <input
+              <label for="name"></label><input
               type="text"
-              name="firstname"
-              placeholder="Enter your First Name"
-              id="firstname"
+              name="room"
+              placeholder="Enter Chat Room Name"
+              id="name"
             />
+              <br>
 
+                <label for="name">Username</label>
             <br />
-            <label for="lastname">Last Name</label> <br />
-            <input
-              type="text"
-              name="lastname"
-              placeholder="Enter your Last Name"
-              id="lastname"
-            />
-
-            <br />
-            <label for="username">Username</label><br />
-            <input
+              <label for="name"></label><input
               type="text"
               name="username"
-              placeholder="Enter your username"
-              id="username"
+              placeholder="Enter username"
+              id="name"
             />
-
-            <br />
-            <label for="email">Email</label><br />
-            <input
-              type="email"
-              name="email"
-              placeholder="Enter your Email"
-              id="email"
-            />
-
-            <br />
+              <br>
             <label for="password">Password</label><br />
               <label>
                   <input
@@ -88,7 +70,7 @@
             <br />
             <div class="registerHere">
               Already have an account yet?<br />
-              <a href="{% url 'index' %}"
+              <a href="{% url 'login' %}"
                 >
                 Login here!</a
               >

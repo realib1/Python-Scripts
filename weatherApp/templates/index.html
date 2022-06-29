@@ -1,10 +1,43 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title>Weather Detector</title>
 </head>
 <body>
-$END$
+    <h1>Weather Detector</h1>
+<div class="row">
+    <form method="post" action="" class="forms">
+        {% csrf_token %}
+        <div class="input-group">
+       
+            <input type="text" class="search" name="search" placeholder="Search for a city">
+        
+            <button class="btn" type="submit">Search</button>
+        </div>
+    </form>
+
+    {% comment %} <div class="row"> {% endcomment %}
+        {% if data.country %}
+        <div class="details">
+            <h2 class="search-city">{{ search.capitalize }}</h2>
+            <h3>Country: {{ data.country }}</h3>
+
+            <h3>Timezone: {{ data.timezone }}</h3>
+            <p>Longitude: {{ data.lon }}</p> 
+            <p>Latitude: {{ data.lat }}</p>
+            <p>Temperature: {{ data.temperature }}</p>
+            <p>Feels Like: {{ data.feels_like }}</p>
+            <p>Pressure: {{ data.pressure }}</p>
+            <p>Visibility: {{ data.visibility }}</p>
+            <p>Wind Speed: {{ data.speed }}</p>
+            <p class="bottom">Humidity: {{ data.humidity }}</p>
+        </div>
+        {% endif %}
+    {% comment %} </div> {% endcomment %}
+
+</div>
 </body>
 </html>

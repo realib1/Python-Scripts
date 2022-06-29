@@ -1,10 +1,25 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title>Blog</title>
 </head>
 <body>
-$END$
+    <h1 class="post-title">My Blog</h1>
+    <div class="post-body">
+{% for post in posts reversed %}
+<div class="card">
+    <h2 class="title">{{ post.title }}</h2>
+    <div class="post-btn">
+    <p class="post">{{ post.body | truncatewords:10}}</p>
+    <a href="/posts/{{ post.id }}">Read More</a>
+    </div>
+    <h5 class="datetime">{{ post.created_at }}</h5>
+</div>
+{% endfor %}
+</div>
 </body>
 </html>

@@ -1,0 +1,13 @@
+{% load static %}
+<html>
+<head>
+    <link rel="stylesheet" href="{% static 'styles.css' %}" />
+</head>
+<body>
+<div class="container">
+<h2 class="logout"> Welcome to Tech Hashes</h2>
+    <a href="{% url 'login' %}" name="login" class="btn login">Log In</a>
+    <a href="{% url 'signup' %}" name="signup" class="btn signup">Sign up</a>
+  </div>
+</body>
+</html>

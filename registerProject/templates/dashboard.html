@@ -1,0 +1,29 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'styles.css' %}" />
+    <title>Dashboard</title>
+</head>
+<body>
+    <div class="container">
+        
+        {% if user.is_authenticated %}
+        <h1>Dashboard</h1>
+        {% for message in messages%}
+    
+        <h3 class="message">{{ message }}</h3>
+    
+        {% endfor %}
+    <h2>Welcome {{user.username}}</h2>
+    <a href="{% url 'login' %}" class="btn btn-primary">Logout</a>
+    {% else %}
+    <a href="{% url 'index' %}" class="btn btn-primary">Login or Signup</a>
+{% endif %}
+    </div>
+</body>
+</html>

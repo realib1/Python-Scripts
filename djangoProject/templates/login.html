@@ -11,7 +11,7 @@
   </head>
   <body>
     <section class="container">
-      <h1 class="page-header">Welcome to Tech Hashes!</h1>
+      <h1 class="page-header">Hashed Chats</h1>
 
       <div class="page-header2">
         <h2>Login Here</h2>
@@ -21,14 +21,14 @@
         <h5>{{ message }}</h5>
         {% endfor %}
 
-        <form method="POST" action="login" id="form" name="form">
+        <form method="POST" action="chatroom" id="form" name="form">
           {% csrf_token %}
 
-          <label for="username">Username</label> <br />
+          <label for="username">Room Name</label> <br />
           <input
             type="text"
-            name="username"
-            placeholder="username"
+            name="room"
+            placeholder="Chat Room Name"
             id="username"
             autocomplete="off"
             autocomplete-suggestions="on"
