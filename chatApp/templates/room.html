@@ -1,32 +1,104 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'styles.css' %}">
-    <title>Title</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="{% static 'style.css' %}">
+<script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
 </head>
 <body>
-<h2 class="title">{{ room }} Chat Room</h2>
-<div class="container">
-    <form id="post-chat">
-        {% csrf_token %}
-        <div class="row">
-            <div class="form-group">
-                <input type="hidden" name="username" id="username" value="{{ username }}">
-            </div>
-            <div class="form-group">
-                <input type="hidden" name="room_id" id="room_id" value="{{ room_details.id }}">
-            </div>
-            <div class="form-group">
-                <input type="text" name="message" id="message">
-            </div>
-        </div>
-    </form>
+  <div class="header">
+    <h1>Chat App</h1>
 
+   
+
+<script>
+$(document).ready(function(){
+
+setInterval(function(){
+    $.ajax({
+        type: 'GET',
+        url : "/getMessages/{{room}}/",
+        success: function(response){
+            console.log(response);
+            $("#display").empty();
+            for (let key in response.messages)
+            {    
+               let temp="<div class='darker'><b id='user'>"+"~"+response.messages[key].user+"</b><p id='message-value'>"+ response.messages[key].value+"</p><span class='time-left'>"+response.messages[key].date+"</span></div>";
+              $("#display").append(temp);
+            
+            }
+        },
+        error: function(response){
+            alert('An error occured')
+        }
+    });
+},1000);
+})
+</script>
+
+
+<div class="container">
+
+  <div class="row" id="chat-box">
+  <h2 class="text-center">{{room}} Room</h2>
+  {% comment %} <hr>  {% endcomment %}
+  <div id="display">
+  
+  <!-- <div class="container darker">
+    <b>Tom</b><p>Hello Everyone, How Are You Guys Doing?</p>
+    <span class="time-left">20th, April 2021</span>
+  </div> -->
+  
+  </div>
+  
+    <form id="post-form">
+        {% csrf_token %}
+        <div class="form-group">
+        <input type="hidden" name="username" id="username" value="{{username}}"/>
+        </div>
+        <div class="form-group">
+        <input type="hidden" name="room_id" id="room_id" value="{{room_details.id}}"/>
+      </div>
+        <div class="form-group">
+        <textarea type="text" name="message" id="message" placeholder="Type a message here..." required></textarea>
+        <input type="submit" value="Send" id="send"/>
+   </div>
+      </form>
 </div>
-<script typeof="text/javascript" src="{% static 'script.js' %}"
-<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-</body>
+<div class="form-group">
+  <a href="{% url 'index' %}" id="signout" class="btn btn-primary">Sign Out Room</a>
+</div>
+
+
+<script type="text/javascript">
+  $(document).on('submit','#post-form',function(e){
+    e.preventDefault();
+
+    $.ajax({
+      type:'POST',
+      url:'/send',
+      data:{
+          username:$('#username').val(),
+          room_id:$('#room_id').val(),
+          message:$('#message').val(),
+        csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val(),
+      },
+      success: function(data){
+         //alert(data)
+      }
+    });
+    document.getElementById('message').value = ''
+  });
+</script>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('#send').click(function(){
+      $('#post-form').submit();
+
+      $.ajax({
+       $('#display').scrollTop($('#display').height());
+    });
+
+    </body>
 </html>

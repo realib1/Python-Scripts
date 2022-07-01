@@ -1,0 +1,205 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #078a69;
+  font-family: Roboto, "Open Sans", sans-serif;
+}
+
+h1 {
+  font-size: 2.5em;
+  color: #fff;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.container::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.row {
+  margin: 2rem;
+  padding: 1.5rem;
+  align-items: center;
+  color: #f1f1f1;
+  max-width: 600px;
+  display: -ms-flexbox;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  border: 2px solid #fff;
+  border-radius: 10px;
+  background-color: rgb(0, 0, 0);
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  font-size: 1em;
+
+}
+
+.form-group {
+  margin-bottom: 10px;
+}
+
+input[type="text"] {
+  padding: .5rem .5rem;
+  margin-bottom: 10px;
+  font-size: 1em;
+  font-family:  inherit;
+  border: none;
+  outline: 2px solid #f1f1f1;
+  border-radius: 5px;
+  min-width: 300px;
+  background-color: #000000;
+  color: #f1f1f1;
+ 
+}
+
+input[type="text"]:focus {
+  border-bottom: 2px solid white;
+  border-radius: 0;
+  outline: none;
+}
+
+input[type="submit"] {
+  font-size: 1rem;
+  font-weight: bold;
+  font-family: "Fira Code", "Courier New", Courier, monospace;
+  width: 100%;
+  color: #078a69;
+  background-color: rgb(2, 3, 3);
+  border: 2px solid #078a69;
+  border-radius: 10px;
+  position: relative;
+  padding: .5rem 1.5rem;
+  margin-top: .5rem;
+  margin-bottom: 1rem;
+
+}
+
+.btn:hover {
+  color: #000000;
+  background-color: #078a69;
+  box-shadow: 0px 0px 5px rgb(51, 50, 50);
+}
+
+.btn-primary {
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: bold;
+  font-family: "Fira Code", "Courier New", Courier, monospace;
+  width: 100%;
+  color: #078a69;
+  background-color: rgb(151, 0, 0);
+  border: 2px solid #078a69;
+  border-radius: 10px;
+  position: relative;
+  padding: .5rem 1.5rem;
+  margin-top: .5rem;
+  margin-bottom: 1rem;
+}
+
+#signout:hover{
+  background-color: rgb(121, 4, 4);
+  color: #f1f1f1;
+  border: none;
+}
+
+#message {
+  font-size: 1em;
+  margin-top: 10px;
+  border-radius: 50px;
+  padding: 0 20px;
+  padding: .5rem .5rem;
+  margin-bottom: 10px;
+  font-size: 1em;
+  font-family:  system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', sans-serif;
+  outline: none;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  min-width: 300px;
+  background-color: #fff;
+}
+
+textarea {
+  overflow: hidden;
+
+}
+
+#send {
+  width: 50px;
+  float: right;
+  font-size: .8em;
+  margin-top: 20px;
+  margin-right: 5px;
+  border-radius: 50px;
+  padding: .5rem;
+  color: #000000;
+  background-color: #078a69;
+  cursor: pointer;
+}
+
+#chat-box {
+  width: 380px;
+}
+/* 
+hr {
+  width: 100%;
+  border: 2px solid #fff;
+  box-shadow: 0 0 2px rgb(185, 8, 8);
+
+} */
+
+.text-center {
+  border-bottom: 2px solid #fff;
+  box-shadow: 0px 3px 5px rgb(0, 0, 0);
+}
+
+#display {
+  width: 100%;
+  height: 350px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  border-bottom: 2px solid #fff;
+  box-shadow: 0px 3px 5px rgb(0, 0, 0);
+  color: #fff;
+}
+
+.darker {
+  background: linear-gradient(45deg, rgba(8, 175, 119, 0.925), rgba(0, 126, 84, 0.5));
+  margin-top: 10px;
+  margin-right: 10px;
+  padding: .3rem 1rem 1.5rem .8rem;
+  border-radius: 10px;
+  box-shadow: 0px 3px 5px rgb(0, 0, 0);
+}
+
+.time-left {
+  float: right;
+  color: rgba(177, 177, 177, 0.829);
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+#user {
+  color: rgb(0, 255, 242);
+  font-size: .8em;
+  margin-left: 270px;
+}
