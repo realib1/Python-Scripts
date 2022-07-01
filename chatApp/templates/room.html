@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <title>Title</title>
+</head>
+<body>
+<h2 class="title">{{ room }} Chat Room</h2>
+<div class="container">
+    <form id="post-chat">
+        {% csrf_token %}
+        <div class="row">
+            <div class="form-group">
+                <input type="hidden" name="username" id="username" value="{{ username }}">
+            </div>
+            <div class="form-group">
+                <input type="hidden" name="room_id" id="room_id" value="{{ room_details.id }}">
+            </div>
+            <div class="form-group">
+                <input type="text" name="message" id="message">
+            </div>
+        </div>
+    </form>
+
+</div>
+<script typeof="text/javascript" src="{% static 'script.js' %}"
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+</body>
+</html>
