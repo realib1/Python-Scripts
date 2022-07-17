@@ -1,1 +1,2 @@
 
+Hello everyone, I am glad to share with you the little work I put in this repo, you can check the README.md for all the projects here, and everython is in Python, I used Tkinter and Django, I will love you all to check it and suggestions are welcome and as well I am vey open for collaborations, I am Frontend and Django backend, but still learning, not a professional though lol, You all happy coding and collaborations rocket 🚀
